@@ -1,0 +1,226 @@
+{
+    "INTJ": {
+      "strengths": [
+        "Strategic and creative",
+        "Independent and decisive",
+        "High self-confidence",
+        "Hardworking and determined"
+      ],
+      "weaknesses": [
+        "Arrogant and dismissive",
+        "Overly critical",
+        "Perfectionist tendencies",
+        "Difficult to relax"
+      ]
+    },
+    "INTP": {
+      "strengths": [
+        "Innovative and original",
+        "Open-minded",
+        "Analytical and objective",
+        "Enthusiastic about ideas"
+      ],
+      "weaknesses": [
+        "Absent-minded",
+        "Insensitive",
+        "Prone to overanalysis",
+        "Difficulty with practical matters"
+      ]
+    },
+    "ENTJ": {
+      "strengths": [
+        "Efficient and energetic",
+        "Strong-willed",
+        "Strategic thinkers",
+        "Charismatic and inspiring"
+      ],
+      "weaknesses": [
+        "Stubborn and dominant",
+        "Impatient",
+        "Insensitive",
+        "Struggles with emotions"
+      ]
+    },
+    "ENTP": {
+      "strengths": [
+        "Knowledgeable and quick-witted",
+        "Excellent brainstormers",
+        "Energetic and original",
+        "Good at handling change"
+      ],
+      "weaknesses": [
+        "Argumentative",
+        "Insensitive",
+        "Can get bored easily",
+        "May lack focus"
+      ]
+    },
+    "INFJ": {
+      "strengths": [
+        "Insightful and inspiring",
+        "Creative and decisive",
+        "Determined and passionate",
+        "Altruistic"
+      ],
+      "weaknesses": [
+        "Sensitive to criticism",
+        "Reluctant to open up",
+        "Perfectionist",
+        "Can burn out easily"
+      ]
+    },
+    "INFP": {
+      "strengths": [
+        "Empathetic and caring",
+        "Loyal and devoted",
+        "Creative and artistic",
+        "Driven by personal values"
+      ],
+      "weaknesses": [
+        "Too idealistic",
+        "Too altruistic",
+        "Difficult to get to know",
+        "Prone to feeling guilt"
+      ]
+    },
+    "ENFJ": {
+      "strengths": [
+        "Tolerant and reliable",
+        "Charismatic and inspiring",
+        "Natural leaders",
+        "Altruistic"
+      ],
+      "weaknesses": [
+        "Overly idealistic",
+        "Too selfless",
+        "Struggles to make tough decisions",
+        "Overly sensitive"
+      ]
+    },
+    "ENFP": {
+      "strengths": [
+        "Curious and observant",
+        "Energetic and enthusiastic",
+        "Excellent communicators",
+        "Good at making connections"
+      ],
+      "weaknesses": [
+        "Overthink things",
+        "Highly emotional",
+        "Difficulty focusing",
+        "Struggles with practical matters"
+      ]
+    },
+    "ISTJ": {
+      "strengths": [
+        "Responsible and reliable",
+        "Dedicated and thorough",
+        "Practical and factual",
+        "Strong-willed"
+      ],
+      "weaknesses": [
+        "Stubborn",
+        "Insensitive",
+        "By-the-book mentality",
+        "Reluctant to change"
+      ]
+    },
+    "ISFJ": {
+      "strengths": [
+        "Supportive and reliable",
+        "Patient and observant",
+        "Loyal and hardworking",
+        "Good practical skills"
+      ],
+      "weaknesses": [
+        "Too humble",
+        "Takes things personally",
+        "Reluctant to change",
+        "Overcommitted to others"
+      ]
+    },
+    "ESTJ": {
+      "strengths": [
+        "Dedicated and strong-willed",
+        "Organized and efficient",
+        "Loyal and patient",
+        "Excellent leadership skills"
+      ],
+      "weaknesses": [
+        "Inflexible and stubborn",
+        "Uncomfortable with unconventional situations",
+        "Judgmental",
+        "Takes control too often"
+      ]
+    },
+    "ESFJ": {
+      "strengths": [
+        "Strong practical skills",
+        "Sensitive and warm",
+        "Loyal and dutiful",
+        "Good at connecting with others"
+      ],
+      "weaknesses": [
+        "Worried about social status",
+        "Inflexible",
+        "Reluctant to innovate",
+        "Too selfless"
+      ]
+    },
+    "ISTP": {
+      "strengths": [
+        "Optimistic and energetic",
+        "Creative and practical",
+        "Spontaneous and rational",
+        "Great at troubleshooting"
+      ],
+      "weaknesses": [
+        "Stubborn",
+        "Insensitive",
+        "Risk-prone",
+        "Dislike commitment"
+      ]
+    },
+    "ISFP": {
+      "strengths": [
+        "Charming and sensitive",
+        "Imaginative and artistic",
+        "Curious and open-minded",
+        "Passionate and dedicated"
+      ],
+      "weaknesses": [
+        "Fiercely independent",
+        "Unpredictable",
+        "Easily stressed",
+        "Overly competitive"
+      ]
+    },
+    "ESTP": {
+      "strengths": [
+        "Energetic and perceptive",
+        "Bold and practical",
+        "Direct and sociable",
+        "Flexible and resourceful"
+      ],
+      "weaknesses": [
+        "Insensitive",
+        "Impatient",
+        "Risk-prone",
+        "Defiant"
+      ]
+    },
+    "ESFP": {
+      "strengths": [
+        "Bold and outgoing",
+        "Original and aesthetic",
+        "Excellent people skills",
+        "Practical and observant"
+      ],
+      "weaknesses": [
+        "Sensitive",
+        "Conflict-averse",
+        "Easily bored",
+        "Poor long-term planning"
+      ]
+    }
+  }

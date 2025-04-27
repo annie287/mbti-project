@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Match Detail</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="/">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+            </a>
+        </div>
+
+        <div class="nav-center">
+            <a href="/">Home</a>
+            <a href="/pairing">Pairing</a>
+        </div>
+    </nav>
+
+    <div style="text-align:center; margin-top: 2rem;">
+        <h1>Details for {{ match_type }}</h1>
+        <p>{{ detail_text }}</p>
+
+        <div style="margin-top: 2rem;">
+            <a href="{{ url_for('pairing', mbti='YOURMBTI') }}">⬅️ Back to Pairing</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

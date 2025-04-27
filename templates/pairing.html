@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pairing Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body style="background-color: {{ bg_color if bg_color else '#ffffff' }}; color: #333;">
+    <!--loading animation-->
+    <div id="loader"></div>
+    <div id="page-content" style="display: none;">
+        <!--navbar-->
+        <nav class="navbar">
+            <div class="nav-left">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+            </div>
+
+            <div class="nav-center">
+                <a href="/">Home</a>
+                <a href="/handbook">History</a>
+                <a href="/pairing">Pairing</a>
+                <a href="/aboutyou">About you</a>
+                <a href="/peoplelikeyou">People likes you</a>
+            </div>
+
+            <div class="nav-right">
+                <button class="btn-outline">Sign in</button>
+                <button class="btn-solid">Register</button>
+            </div>
+        </nav>
+
+        <h1 class="pairing-title">Pairing for {{ mbti }}</h1>
+
+        <div class="match-cards">
+            <div class="match-card">
+                <h2>Best Match 💖</h2>
+                <ul class="match-list">
+                    {% for match in best_match %}
+                    <li class="match-tem">
+                        <a href="{{ url_for('match_detail') }}?type={{ match }}&relation=best">{{ match }}</a>
+                    </li>
+                    {% else %}
+                    <li>None</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="match-card">
+                <!--<div class="match-card">-->
+                <h2>Worst Match 💔</h2>
+                <ul class="match-list">
+                    {% for match in worst_match %}
+                    <li class="match-item">
+                        <a href="{{ url_for('match_detail') }}?type={{ match }}&relation=worst">{{ match }}</a>
+                    </li>
+                    {% else %}
+                    <li>None</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <!--Displaying the strengths and weaknesses-->
+        <div style="display: flex; justify-content: space-around; margin-top: 30px;">
+            <div>
+                <h2>Strengths</h2>
+                {% if strengths %}
+                <ul class="match-list">
+                    {% for strength in strengths %}
+                    <li>✅ {{ strength }}</li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No strengths data available.</p>
+                {% endif %}
+            </div>
+
+            <div>
+                <h2>Weaknesses</h2>
+                {% if weaknesses %}
+                <ul class="match-list">
+                    {% for weakness in weaknesses %}
+                    <li>⚡ {{ weakness }}</li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No weaknesses data available.</p>
+                {% endif %}
+            </div>
+
+        </div>
+
+        <div class="celebrities">
+            {% for celeb in profile.celebrities %}
+            <div class="celeb-container">
+                <img class="celeb-pic" src="{{ url_for('static', filename=celeb.image) }}" alt="{{ celeb.name }}">
+                {% set vowel_start = mbti[0] in ['A', 'E', 'I', 'O', 'U'] %}
+                <p>{{ celeb.name }} is also {% if vowel_start %}an{% else %}a{% endif %} {{ mbti }}!</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!--loading animation close-->
+        <script>
+            window.addEventListener("load", function () {
+                document.getElementById("loader").style.display = "none"; // 隐藏loading圈圈
+                document.getElementById("page-content").style.display = "block"; // 显示真实页面内容
+            });
+        </script>
+
+</body>
+
+</html>

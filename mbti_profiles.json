@@ -1,0 +1,194 @@
+{
+    "INFJ": {
+        "quote": "You don't chase the spotlight — you build the light inside you, and let it shine when the world needs it most.",
+        "animal_name": "The Snow Leopard",
+        "animal_desc": "Soft gaze, sharp soul — they disappear for weeks but return wiser and ready to save humanity.",
+        "animal_image": "animals/infj_snowleopard.jpg",
+        "celebrities": [
+            {
+                "name": "J.K. Rowling",
+                "image": "celebs/jk_rowling.jpg"
+            }
+        ]
+    },
+    "INFP": {
+        "quote": "You feel the world not with your hands, but with your whole heart.",
+        "animal_name": "The Deer",
+        "animal_desc": "Tiptoes through life with gentle dreams, until you threaten their values — then it's emotional kung fu.",
+        "animal_image": "animals/infp_deer.jpg",
+        "celebrities": [
+            {
+                "name": "Audrey Hepburn",
+                "image": "celebs/audrey.jpg"
+            }
+        ]
+    },
+    "INTJ": {
+        "quote": "While others dream, you design blueprints for the impossible.",
+        "animal_name": "The Owl",
+        "animal_desc": "Sees through every excuse before you've even opened your mouth — plotting world domination, but with a reading lamp.",
+        "animal_image": "animals/intj_owl.jpg",
+        "celebrities": [
+            {
+                "name": "Elon Musk",
+                "image": "celebs/elon.jpg"
+            }
+        ]
+    },
+    "INTP": {
+        "quote": "You dive into thoughts most people didn't even know existed.",
+        "animal_name": "The Octopus",
+        "animal_desc": "Thinking eight ideas at once, forgetting half of them, then inventing something no one's ever seen before.",
+        "animal_image": "animals/intp_octopus.jpg",
+        "celebrities": [
+            {
+                "name": "Albert Einstein",
+                "image": "celebs/einstein.jpg"
+            }
+        ]
+    },
+    "ENFJ": {
+        "quote": "You build empires of kindness where others only see empty fields.",
+        "animal_name": "The Dog",
+        "animal_desc": "Will organise your life, hype you up, bake you a cake, and save your soul — all before noon.",
+        "animal_image": "animals/enfj_dog.jpg",
+        "celebrities": [
+            {
+                "name": "Oprah Winfrey",
+                "image": "celebs/oprah.jpg"
+            }
+        ]
+    },
+    "ENFP": {
+        "quote": "Your spirit is a firework show set to your favourite song.",
+        "animal_name": "The Dolphin",
+        "animal_desc": "Laughing at their own jokes, inspiring revolutions between naps, and somehow making existential crises look cute.",
+        "animal_image": "animals/enfp_dolphin.jpg",
+        "celebrities": [
+            {
+                "name": "Jennifer Aniston",
+                "image": "celebs/jennifer.jpg"
+            }
+        ]
+    },
+    "ENTJ": {
+        "quote": "You don't follow the path. You build it.",
+        "animal_name": "The Eagle",
+        "animal_desc": "Wakes up, chooses leadership, and flies three business moves ahead while you're still finding your coffee.",
+        "animal_image": "animals/entj_eagle.jpg",
+        "celebrities": [
+            {
+                "name": "Steve Jobs",
+                "image": "celebs/steve.jpg"
+            }
+        ]
+    },
+    "ENTP": {
+        "quote": "Your ideas are faster than the speed of light.",
+        "animal_name": "The Fox",
+        "animal_desc": "Charmingly causing chaos, but somehow it always sounds like a brilliant idea when they explain it.",
+        "animal_image": "animals/entp_fox.jpg",
+        "celebrities": [
+            {
+                "name": "Tom Hanks",
+                "image": "celebs/tomhanks.jpg"
+            }
+        ]
+    },
+    "ISFJ": {
+        "quote": "You weave safety nets from threads of pure love.",
+        "animal_name": "The Elephant",
+        "animal_desc": "Remembers your birthday, your allergies, your childhood traumas — and carries them all with quiet, unstoppable love.",
+        "animal_image": "animals/isfj_elephant.jpg",
+        "celebrities": [
+            {
+                "name": "Mother Teresa",
+                "image": "celebs/teresa.jpg"
+            }
+        ]
+    },
+    "ISFP": {
+        "quote": "You live life like a secret painting — vivid, beautiful, and quietly bold.",
+        "animal_name": "The Cat",
+        "animal_desc": "Looks aloof but actually wrote you a secret poem — just don't expect them to admit it.",
+        "animal_image": "animals/isfp_cat.jpg",
+        "celebrities": [
+            {
+                "name": "Britney Spears",
+                "image": "celebs/britney.jpg"
+            }
+        ]
+    },
+    "ISTJ": {
+        "quote": "You are the silent architect of stability.",
+        "animal_name": "The Beaver",
+        "animal_desc": "Methodically building empires one brick at a time — and judging you gently for not reading the instructions.",
+        "animal_image": "animals/istj_beaver.jpg",
+        "celebrities": [
+            {
+                "name": "Morgan Freeman",
+                "image": "celebs/morgan.jpg"
+            }
+        ]
+    },
+    "ISTP": {
+        "quote": "You trust your hands more than any map.",
+        "animal_name": "The Panther",
+        "animal_desc": "Silently judging your DIY skills — then fixing everything with a paperclip and a smirk.",
+        "animal_image": "animals/istp_panther.jpg",
+        "celebrities": [
+            {
+                "name": "Clint Eastwood",
+                "image": "celebs/clint.jpg"
+            }
+        ]
+    },
+    "ESFJ": {
+        "quote": "You build homes not with bricks, but with kindness.",
+        "animal_name": "The Horse",
+        "animal_desc": "Gallops into your life with homemade lasagna, party invites, and a terrifyingly well-organised group chat.",
+        "animal_image": "animals/esfj_horse.jpg",
+        "celebrities": [
+            {
+                "name": "Hugh Jackman",
+                "image": "celebs/hugh.jpg"
+            }
+        ]
+    },
+    "ESFP": {
+        "quote": "You turn every moment into a celebration.",
+        "animal_name": "The Parrot",
+        "animal_desc": "Part-time life of the party, full-time collector of inside jokes, spontaneous karaoke champion by destiny.",
+        "animal_image": "animals/esfp_parrot.jpg",
+        "celebrities": [
+            {
+                "name": "Miley Cyrus",
+                "image": "celebs/miley.jpg"
+            }
+        ]
+    },
+    "ESTJ": {
+        "quote": "You set the rules that the rest of us are secretly grateful for.",
+        "animal_name": "The Lion",
+        "animal_desc": "Roars first, asks questions later — but it’s only because they genuinely believe you deserve the best.",
+        "animal_image": "animals/estj_lion.jpg",
+        "celebrities": [
+            {
+                "name": "Judge Judy",
+                "image": "celebs/judy.jpg"
+            }
+        ]
+    },
+    "ESTP": {
+        "quote": "You live where adrenaline and opportunity collide.",
+        "animal_name": "The Tiger",
+        "animal_desc": "Crashes through the jungle of life at full speed, somehow still looking cooler than everyone else.",
+        "animal_image": "animals/estp_tiger.jpg",
+        "celebrities": [
+            {
+                "name": "Madonna",
+                "image": "celebs/madonna.jpg"
+            }
+        ]
+    }
+}

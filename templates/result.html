@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MBTI Analysis Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body style="background-color: {{ bg_color if bg_color else '#ffffff' }}; color: #333;">
+  <!--loading animation-->
+  <div id="loader"></div>
+  <div id="page-content" style="display: none;">
+    <!--navbar-->
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+      </div>
+
+      <div class="nav-center">
+        <a href="/">Home</a>
+        <a href="/handbook">History</a>
+        <a href="/pairing">Pairing</a>
+        <a href="/aboutyou">About you</a>
+        <a href="/peoplelikeyou">People likes you</a>
+      </div>
+
+      <div class="nav-right">
+        <button class="btn-outline">Sign in</button>
+        <button class="btn-solid">Register</button>
+      </div>
+    </nav>
+
+
+    <h1 class="pairing-title">Your MBTI Type: {{ mbti }}</h1>
+    <!--Displaying the animal profile-->
+    <p class="pairing-text">"{{ profile.quote }}"</p>
+
+    <section style="padding: 2rem; text-align: center;">
+      <div class="animal-card"
+        style="border: 1px solid #ddd; border-radius: 10px; padding: 1.5rem; max-width: 500px; margin: auto;">
+
+        <img class="animal-pic" src="{{ url_for('static', filename=profile.animal_image) }}"
+          alt="{{ profile.animal_name }}">
+
+        <h2>{{ profile.animal_name }}</h2>
+
+        <p>{{ profile.animal_desc }}</p>
+
+        <a href="{{ url_for('pairing', mbti=mbti) }}">
+          <button style="margin-top: 1rem;">Pair Me!</button>
+        </a>
+
+      </div>
+    </section>
+
+    <!--loading animation close-->
+    <script>
+      window.addEventListener("load", function () {
+        document.getElementById("loader").style.display = "none"; // 隐藏loading圈圈
+        document.getElementById("page-content").style.display = "block"; // 显示真实页面内容
+      });
+    </script>
+</body>
+
+</html>

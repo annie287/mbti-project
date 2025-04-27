@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/static/style.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI Personality Test</title>
+</head>
+
+<body style="background: linear-gradient(135deg, #d5f3ff, #ffffff); color: #333;"></body>
+<!--loading animation-->
+<div id="loader"></div>
+<div id="page-content" style="display: none;">
+    <!--navbar-->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="/">
+                <img src="/static/logo.png" alt="Logo" class="logo">
+            </a>
+        </div>
+
+        <div class="nav-center">
+            <a href="/handbook">MBTI Handbook</a>
+            <a href="/history">History</a>
+            <a href="/pairing">Pairing</a>
+            <a href="/aboutyou">About You</a>
+            <a href="/peoplelikeyou">People Like You</a>
+        </div>
+
+    </nav>
+
+    <!--let the user select their mbti-->
+    <div class="form-container">
+        <h1>Enter Your MBTI Type</h1>
+        <form action="/submit_mbtitest" method="POST">
+            <label for="mbti">Select Your MBTI Type:</label><br>
+            <select name="mbti" id="mbti" required>
+                <option value="INTJ">INTJ</option>
+                <option value="INTP">INTP</option>
+                <option value="ENTJ">ENTJ</option>
+                <option value="ENTP">ENTP</option>
+                <option value="INFJ">INFJ</option>
+                <option value="INFP">INFP</option>
+                <option value="ENFJ">ENFJ</option>
+                <option value="ENFP">ENFP</option>
+                <option value="ISTJ">ISTJ</option>
+                <option value="ISFJ">ISFJ</option>
+                <option value="ESTJ">ESTJ</option>
+                <option value="ESFJ">ESFJ</option>
+                <option value="ISTP">ISTP</option>
+                <option value="ISFP">ISFP</option>
+                <option value="ESTP">ESTP</option>
+                <option value="ESFP">ESFP</option>
+                <!-- Add other MBTI types -->
+            </select><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <!--loading animation close-->
+    <script>
+        window.addEventListener("load", function () {
+            document.getElementById("loader").style.display = "none"; // 隐藏loading圈圈
+            document.getElementById("page-content").style.display = "block"; // 显示真实页面内容
+        });
+    </script>
+    </body>
+
+</html>

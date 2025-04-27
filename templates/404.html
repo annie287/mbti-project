@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Page Not Found</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            background-color: #f8f9fa;
+        }
+
+        img {
+            width: 250px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <meta http-equiv="refresh" content="6; url=/" />
+</head>
+
+<body>
+
+    <a href="/static/cat_404.jpg">
+        <img src="{{ url_for('static', filename='cat_403.jpg') }}" alt="Lost Cat" class="cat-img">
+    </a>
+
+    <h1>Oops! This page got a little... *Perceiving*.</h1>
+    <p>Maybe an ENFP wandered off the map, or an INTP got lost thinking too hard?</p>
+    <p>Don't worry — all types eventually find their way home! 🧭</p>
+    <p>You will be redirected back to safety in 6 seconds...</p>
+    <p><a href="/">Click here if you're feeling *Judging* and want to hurry!</a></p>
+</body>
+
+</html>
