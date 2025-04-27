@@ -15,69 +15,69 @@ with open ('mbti_colour.json', 'r')as f:
     mbti_colour = json.load(f)
 
 MATCHING = {
-    'ISTJ': {
-        'best_match': ['ESFP'],
-        'worst_match': ['ENFP']
-    },
-    'ISFJ': {
-        'best_match': ['ESTP'],
-        'worst_match': ['ENTP']
-    },
-    'INFJ': {
-        'best_match': ['ENFP'],
-        'worst_match': ['ESTP']
-    },
-    'INTJ': {
-        'best_match': ['ENFP', 'INTP'],
-        'worst_match': ['ESFP']
-    },
-    'ISTP': {
-        'best_match': ['ESFJ'],
-        'worst_match': ['ENFJ']
-    },
-    'ISFP': {
-        'best_match': ['ESTJ'],
-        'worst_match': ['ENTJ']
-    },
     'INFP': {
-        'best_match': ['ENFJ'],
+        'best_match': ['ENFJ', 'ENTJ'],
         'worst_match': ['ESTP']
-    },
-    'INTP': {
-        'best_match': ['ENTJ', 'ENFP'],
-        'worst_match': ['ESFJ']
-    },
-    'ESTP': {
-        'best_match': ['ISFJ'],
-        'worst_match': ['INFJ']
-    },
-    'ESFP': {
-        'best_match': ['ISTJ'],
-        'worst_match': ['INTJ']
     },
     'ENFP': {
-        'best_match': ['INFJ'],
+        'best_match': ['INFJ', 'INTJ'],
         'worst_match': ['ISTJ']
     },
-    'ENTP': {
-        'best_match': ['INFJ'],
-        'worst_match': ['ISFJ']
-    },
-    'ESTJ': {
-        'best_match': ['ISFP'],
-        'worst_match': ['INFP']
-    },
-    'ESFJ': {
-        'best_match': ['ISFP', 'ISTP'],
-        'worst_match': ['INTP']
+    'INFJ': {
+        'best_match': ['ENFP', 'ENTP'],
+        'worst_match': ['ESTP']
     },
     'ENFJ': {
         'best_match': ['INFP', 'ISFP'],
         'worst_match': ['ISTP']
     },
+    'INTJ': {
+        'best_match': ['ENFP', 'ENTP'],
+        'worst_match': ['ESFP']
+    },
     'ENTJ': {
-        'best_match': ['INTP', 'ENFP'],
+        'best_match': ['INFP', 'INTP'],
         'worst_match': ['ISFP']
+    },
+    'INTP': {
+        'best_match': ['ENTJ', 'ESTJ'],
+        'worst_match': ['ESFJ']
+    },
+    'ENTP': {
+        'best_match': ['INFJ', 'INTJ'],
+        'worst_match': ['ISFJ']
+    },
+    'ISFP': {
+        'best_match': ['ENFJ', 'ESTJ', 'ESFJ'],
+        'worst_match': ['ENTJ']
+    },
+    'ESFP': {
+        'best_match': ['ISFJ', 'ISTJ'],
+        'worst_match': ['INTJ']
+    },
+    'ISTP': {
+        'best_match': ['ESFJ', 'ESTJ'],
+        'worst_match': ['ENFJ']
+    },
+    'ESTP': {
+        'best_match': ['ISFJ', 'ISTJ'],
+        'worst_match': ['INFJ']
+    },
+    'ISFJ': {
+        'best_match': ['ESFP', 'ESTP'],
+        'worst_match': ['ENTP']
+    },
+    'ESFJ': {
+        'best_match': ['ISFP', 'ISTP'],
+        'worst_match': ['INTP']
+    },
+    'ISTJ': {
+        'best_match': ['ESFP', 'ESTP'],
+        'worst_match': ['ENFP']
+    },
+    'ESTJ': {
+        'best_match': ['INTP', 'ISFP', 'ISTP'],
+        'worst_match': ['INFP']
     },
 }
 
