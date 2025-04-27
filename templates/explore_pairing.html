@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MBTI Handbook</title>
+    <title>Pairing</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
-<body style="background: linear-gradient(135deg, #e0c3fc, #8ec5fc); color: #333;">
+<body>
     <!--navbar-->
     <nav class="navbar">
         <div class="nav-left">
@@ -19,8 +19,8 @@
 
         <div class="nav-center">
             <a href="/">Home</a>
+            <a href="/handbook">Handbook</a>
             <a href="/history">History</a>
-            <a href="/explore-pairing">Pairing</a>
             <a href="/aboutyou">About you</a>
             <a href="/peoplelikeyou">People likes you</a>
         </div>
@@ -35,16 +35,26 @@
             {% endif %}
         </div>
     </nav>
-
-    <h1>Welcome, {{ username }}!</h1>
-    {% if profile %}
-    <h2>Your MBTI Type: {{ mbti_type }}</h2>
-    <h3>{{ profile['animal_name'] }}</h3>
-    <p>{{ profile['animal_desc'] }}</p>
-    <img src="{{ url_for('static', filename=profile['animal_image']) }}" alt="{{ profile['animal_name'] }}">
-    {% else %}
-    <p>You haven't selected your MBTI type yet. Go to Home to select!</p>
-    {% endif %}
+    <h1>Explore MBTI Pairing</h1>
+    <p>Discover interesting MBTI matchups!</p>
+    <div class="matching-box">
+        <table>
+            <thead>
+                <tr>
+                    <th>MBTI Type</th>
+                    <th>Best Match</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mbti, matches in matching.items() %}
+                <tr>
+                    <td>{{ mbti }}</td>
+                    <td>{{ matches['best_match'] | join(', ') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
 </body>
 

@@ -23,9 +23,19 @@
         <div class="nav-center">
             <a href="/handbook">MBTI Handbook</a>
             <a href="/history">History</a>
-            <a href="/pairing">Pairing</a>
+            <a href="/explore-pairing">Pairing</a>
             <a href="/aboutyou">About You</a>
             <a href="/peoplelikeyou">People Like You</a>
+        </div>
+
+        <div class="nav-right">
+            {% if session.get('username') %}
+            <span class="welcome-text">Welcome, {{ session['username'] }}!</span>
+            <a href="/logout" class="btn-outline">Logout</a>
+            {% else %}
+            <a href="/login" class="btn-solid">Sign In</a>
+            <a href="/register" class="btn-solid">Register</a>
+            {% endif %}
         </div>
 
     </nav>
@@ -54,7 +64,8 @@
                 <option value="ESFP">ESFP</option>
                 <!-- Add other MBTI types -->
             </select><br><br>
-            <button type="submit">Submit</button>
+            <button type="submit" class="btn-outline">Submit</button>
+
         </form>
     </div>
     <!--loading animation close-->

@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
 import json
 import os
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'
 
 with open("mbti_profiles.json", "r") as f:
     mbti_profiles = json.load(f)
@@ -97,17 +98,95 @@ def init_db():
         worst_match TEXT
     )
     ''')
+    c.execute('''
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE,
+        password TEXT,
+        mbti_type TEXT
+    )
+    ''')
     conn.commit()
     conn.close()
 init_db()
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        conn = sqlite3.connect('database.db')
+        c = conn.cursor()
+        c.execute('SELECT * FROM users WHERE username = ?', (username,))
+        user = c.fetchone()
+        conn.close()
+
+        if user and user[2] == password:
+            session['username'] = username
+            return redirect(url_for('home'))
+        else:
+            error = 'Invalid username or password!'
+    return render_template('login.html', error=error)
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('home'))
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        conn = sqlite3.connect('database.db')
+        c = conn.cursor()
+        try:
+            c.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, password))
+            conn.commit()
+            conn.close()
+
+            session['username'] = username
+            return redirect(url_for('home'))
+        except sqlite3.IntegrityError:
+            conn.close()
+            return "Username already exists! Please choose another one."
+        
+    return render_template('register.html')  
+
 @app.route('/handbook')
 def handbook():
-    return render_template('handbook.html')
+    return render_template(
+        'handbook.html', 
+        profiles=mbti_profiles
+    )
 
 @app.route('/aboutyou')
 def about_you():
-    return render_template('aboutyou.html')
+    if 'username' not in session:
+        return redirect(url_for('login'))  
+    username = session['username']
+
+    conn = sqlite3.connect('database.db')
+    c = conn.cursor()
+    c.execute('SELECT mbti_type FROM users WHERE username = ?', (username,))
+    user_mbti = c.fetchone()
+    conn.close()
+
+    if user_mbti:
+        mbti_type = user_mbti[0]
+        profile = mbti_profiles.get(mbti_type, {})
+        return render_template(
+            'aboutyou.html', 
+            username=username, 
+            mbti_type=mbti_type, 
+            profile=profile
+            )
+    else:
+        return "No MBTI profile found for you yet!"
+
 
 @app.route('/peoplelikeyou')
 def people_like_you():
@@ -149,6 +228,13 @@ def pairing():
                            profile=profile,
                            bg_color=bg_color
                         )
+
+@app.route('/explore-pairing')
+def explore_pairing():
+    return render_template(
+        'explore_pairing.html',
+        matching=MATCHING
+        )
 
 @app.route('/submit_mbtitest', methods=['POST', 'GET'])
 def submit_mbtitest():

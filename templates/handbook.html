@@ -1,4 +1,59 @@
-{% block content %}
-<h1>MBTI Handbook 📖</h1>
-<p>Coming soon...</p>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MBTI Handbook</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body style="background: linear-gradient(135deg, #e0c3fc, #8ec5fc); color: #333;">
+    <!--navbar-->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="/">
+                <img src="/static/logo_full.jpg" alt="Logo" class="logo">
+            </a>
+        </div>
+
+        <div class="nav-center">
+            <a href="/">Home</a>
+            <a href="/history">History</a>
+            <a href="/explore-pairing">Pairing</a>
+            <a href="/aboutyou">About you</a>
+            <a href="/peoplelikeyou">People likes you</a>
+        </div>
+
+        <div class="nav-right">
+            {% if session.get('username') %}
+            <span>Welcome, {{ session['username'] }}!</span>
+            <a href="/logout" class="btn-solid">Logout</a>
+            {% else %}
+            <a href="/login" class="btn-solid">Sign In</a>
+            <a href="/register" class="btn-solid">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <section class="handbook-header">
+        <h1>Discover Your Personality</h1>
+        <p>The Myers-Briggs Type Indicator (MBTI) divides people into 16 types based on how they perceive the world and
+            make decisions. Find your spirit animal!</p>
+    </section>
+
+    <!-- 16 personalities -->
+    <section class="mbti-grid">
+        {% for mbti, profile in profiles.items() %}
+        <div class="mbti-card">
+            <img src="{{ url_for('static', filename=profile['animal_image']) }}" alt="{{ mbti }}" class="animal-icon">
+            <h2>{{ mbti }}</h2>
+            <p>{{ profile['animal_name'] }}</p>
+            <p class="desc">{{ profile['animal_desc'] }}</p>
+        </div>
+        {% endfor %}
+    </section>
+
+</body>
+
+</html>

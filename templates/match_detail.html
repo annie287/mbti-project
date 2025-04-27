@@ -12,7 +12,7 @@
     <nav class="navbar">
         <div class="nav-left">
             <a href="/">
-                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+                <img src="/static/logo_full.jpg" alt="Logo" class="logo">
             </a>
         </div>
 
@@ -25,10 +25,6 @@
     <div style="text-align:center; margin-top: 2rem;">
         <h1>Details for {{ match_type }}</h1>
         <p>{{ detail_text }}</p>
-
-        <div style="margin-top: 2rem;">
-            <a href="{{ url_for('pairing', mbti='YOURMBTI') }}">⬅️ Back to Pairing</a>
-        </div>
     </div>
 
 </body>

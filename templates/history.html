@@ -3,32 +3,60 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History of MBTI Submissions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>History of previous users</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
-<body>
-    <h1>History of MBTI Submissions</h1>
+<body style="background: linear-gradient(135deg, #ffe0e9, #ffffff);">
+    <!--navbar-->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="/">
+                <img src="/static/logo_full.jpg" alt="Logo" class="logo">
+            </a>
+        </div>
 
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>MBTI Type</th>
-            <th>Best Match</th>
-            <th>Worst Match</th>
-        </tr>
-        {% for row in rows %}
-        <tr>
-            <td>{{ row[0] }}</td> <!-- id -->
-            <td>{{ row[1] }}</td> <!-- mbti_type -->
-            <td>{{ row[2] }}</td> <!-- best_match -->
-            <td>{{ row[3] }}</td> <!-- worst_match -->
-        </tr>
-        {% endfor %}
-    </table>
+        <div class="nav-center">
+            <a href="/">Home</a>
+            <a href="/history">History</a>
+            <a href="/explore-pairing">Pairing</a>
+            <a href="/aboutyou">About you</a>
+            <a href="/peoplelikeyou">People likes you</a>
+        </div>
 
-    <br>
-    <a href="/">Back to Home</a>
+        <div class="nav-right">
+            {% if session.get('username') %}
+            <span>Welcome, {{ session['username'] }}!</span>
+            <a href="/logout" class="btn-solid">Logout</a>
+            {% else %}
+            <a href="/login" class="btn-solid">Sign In</a>
+            <a href="/register" class="btn-solid">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <div class="history-table-container">
+        <h1>History Records</h1>
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>MBTI Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in results %}
+                <tr>
+                    <td>{{ record[0] }}</td> <!-- username -->
+                    <td>{{ record[1] }}</td> <!-- mbti_type -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
 </body>
 
 </html>

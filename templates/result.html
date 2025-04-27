@@ -15,20 +15,27 @@
     <!--navbar-->
     <nav class="navbar">
       <div class="nav-left">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+        <a href="/">
+          <img src="/static/logo_full.jpg" alt="Logo" class="logo">
+        </a>
       </div>
 
       <div class="nav-center">
         <a href="/">Home</a>
-        <a href="/handbook">History</a>
-        <a href="/pairing">Pairing</a>
+        <a href="/handbook">MBTI Handbook</a>
+        <a href="/explore-pairing">Pairing</a>
         <a href="/aboutyou">About you</a>
         <a href="/peoplelikeyou">People likes you</a>
       </div>
 
       <div class="nav-right">
-        <button class="btn-outline">Sign in</button>
-        <button class="btn-solid">Register</button>
+        {% if session.get('username') %}
+        <span>Welcome, {{ session['username'] }}!</span>
+        <a href="/logout" class="btn-solid">Logout</a>
+        {% else %}
+        <a href="/login" class="btn-solid">Sign In</a>
+        <a href="/register" class="btn-solid">Register</a>
+        {% endif %}
       </div>
     </nav>
 

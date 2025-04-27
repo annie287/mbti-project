@@ -40,40 +40,74 @@ body {
   text-decoration: underline;
 }
 
+/* navbar右侧按钮通用 */
 .nav-right button {
   margin-left: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 8px;
-  border: none;
-  font-weight: 500;
+  border: 2px solid transparent;
+  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+/* 紫色outline按钮，带渐变效果 */
 .btn-outline {
-  background-color: white;
-  color: black;
-  border: 1px solid black;
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+  /* ✨柔和紫色渐变 */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(161, 140, 209, 0.4);
 }
 
+.btn-outline:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(161, 140, 209, 0.5);
+}
+
+/* 黑色solid按钮，hover时反转 */
 .btn-solid {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
   background-color: black;
   color: white;
+  border: 2px solid black;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
 }
 
+.btn-solid:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* 中间导航栏a链接 */
 .nav-center a {
   margin: 0 1rem;
   text-decoration: none;
   color: black;
   font-weight: 500;
   transition: all 0.3s ease;
-  /* ✨平滑过渡 */
 }
 
 .nav-center a:hover {
   color: #6A5ACD;
-  /* ✨鼠标移上去变紫色，可以改其他喜欢的色 */
+  /* 鼠标移上去字体变紫 */
   transform: scale(1.1);
-  /* ✨轻轻放大 */
 }
 
 /*navbar end*/
@@ -256,4 +290,179 @@ select:focus {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+/* 顶部标题区 */
+.handbook-header {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.handbook-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.handbook-header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 16格布局 */
+.mbti-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* 每个小卡片 */
+.mbti-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mbti-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 小动物图片 */
+.animal-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.animal-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 小描述 */
+.mbti-card .desc {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.matching-box {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.matching-box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.matching-box th,
+.matching-box td {
+  padding: 0.8rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.matching-box th {
+  background-color: #f7f7f7;
+}
+
+.matching-box tr:hover {
+  background-color: #f0f8ff;
+}
+
+/* 整个table外层包裹 */
+.history-table-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 真正的table */
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* 表头的样式 */
+.history-table th {
+  background-color: #f4f8fb;
+  color: #333;
+  font-weight: bold;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+}
+
+/* 每一行的数据样式 */
+.history-table td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+}
+
+/* Hover效果：鼠标移动到一行上时 */
+.history-table tr:hover {
+  background-color: #f0f8ff;
+}
+
+/* 让最后一行不要多余的border */
+.history-table tr:last-child td {
+  border-bottom: none;
+}
+
+/*register and login page*/
+.register-container {
+  max-width: 400px;
+  margin: 5rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(108, 99, 255, 0.2);
+  text-align: center;
+}
+
+.register-container input {
+  width: 90%;
+  padding: 0.8rem;
+  margin: 0.8rem 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.register-container button {
+  width: 90%;
+  margin-top: 1rem;
+}
+
+.small-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
 }

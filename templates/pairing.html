@@ -13,21 +13,28 @@
     <div id="page-content" style="display: none;">
         <!--navbar-->
         <nav class="navbar">
-            <div class="nav-left">
-                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+            <div class="nav-left" <a href="/">
+                <img src="/static/logo_full.jpg" alt="Logo" class="logo">
+                </a>
             </div>
 
             <div class="nav-center">
                 <a href="/">Home</a>
-                <a href="/handbook">History</a>
-                <a href="/pairing">Pairing</a>
+                <a href="/handbook">Handbook</a>
+                <a href="/history">History</a>
+                <a href="/explore-pairing">Pairing</a>
                 <a href="/aboutyou">About you</a>
                 <a href="/peoplelikeyou">People likes you</a>
             </div>
 
             <div class="nav-right">
-                <button class="btn-outline">Sign in</button>
-                <button class="btn-solid">Register</button>
+                {% if session.get('username') %}
+                <span>Welcome, {{ session['username'] }}!</span>
+                <a href="/logout" class="btn-solid">Logout</a>
+                {% else %}
+                <a href="/login" class="btn-solid">Sign In</a>
+                <a href="/register" class="btn-solid">Register</a>
+                {% endif %}
             </div>
         </nav>
 
@@ -38,7 +45,7 @@
                 <h2>Best Match 💖</h2>
                 <ul class="match-list">
                     {% for match in best_match %}
-                    <li class="match-tem">
+                    <li class="match-item">
                         <a href="{{ url_for('match_detail') }}?type={{ match }}&relation=best">{{ match }}</a>
                     </li>
                     {% else %}
@@ -63,7 +70,7 @@
         </div>
 
         <!--Displaying the strengths and weaknesses-->
-        <div style="display: flex; justify-content: space-around; margin-top: 30px;">
+        <div class="traits-container" style="display: flex; justify-content: space-around; margin-top: 30px;">
             <div>
                 <h2>Strengths</h2>
                 {% if strengths %}
@@ -92,23 +99,23 @@
 
         </div>
 
-        <div class="celebrities">
-            {% for celeb in profile.celebrities %}
-            <div class="celeb-container">
-                <img class="celeb-pic" src="{{ url_for('static', filename=celeb.image) }}" alt="{{ celeb.name }}">
-                {% set vowel_start = mbti[0] in ['A', 'E', 'I', 'O', 'U'] %}
-                <p>{{ celeb.name }} is also {% if vowel_start %}an{% else %}a{% endif %} {{ mbti }}!</p>
-            </div>
-            {% endfor %}
+        <div class="celebrities" style="margin-top: 3rem;"></div>
+        {% for celeb in profile.celebrities %}
+        <div class="celeb-container">
+            <img class="celeb-pic" src="{{ url_for('static', filename=celeb.image) }}" alt="{{ celeb.name }}">
+            {% set vowel_start = mbti[0] in ['A', 'E', 'I', 'O', 'U'] %}
+            <p>{{ celeb.name }} is also {% if vowel_start %}an{% else %}a{% endif %} {{ mbti }}!</p>
         </div>
+        {% endfor %}
+    </div>
 
-        <!--loading animation close-->
-        <script>
-            window.addEventListener("load", function () {
-                document.getElementById("loader").style.display = "none"; // 隐藏loading圈圈
-                document.getElementById("page-content").style.display = "block"; // 显示真实页面内容
-            });
-        </script>
+    <!--loading animation close-->
+    <script>
+        window.addEventListener("load", function () {
+            document.getElementById("loader").style.display = "none"; // 隐藏loading圈圈
+            document.getElementById("page-content").style.display = "block"; // 显示真实页面内容
+        });
+    </script>
 
 </body>
 
