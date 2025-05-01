@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
 import json
 import os
+import math
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
@@ -188,10 +189,6 @@ def about_you():
         return "No MBTI profile found for you yet!"
 
 
-@app.route('/peoplelikeyou')
-def people_like_you():
-    return render_template('peoplelikeyou.html')
-
 @app.route('/match_detail')
 def match_detail():
     match_type = request.args.get('type')
@@ -287,10 +284,17 @@ def view_results():
 def view_history():
     conn = sqlite3.connect('database.db')
     c = conn.cursor()
-    c.execute('SELECT * FROM results')
-    results = c.fetchall()
+    c.execute('SELECT mbti_type FROM results')
+    rows = c.fetchall()
     conn.close()
-    return render_template('history.html', results=results)
+
+    mbti_counts = {}
+    for row in rows:
+        mbti = row[0]
+        if mbti:
+            mbti_counts[mbti] = mbti_counts.get(mbti, 0) + 1
+
+    return render_template('history.html', mbti_counts=mbti_counts) 
 
 @app.errorhandler(404)
 def page_not_found(e):

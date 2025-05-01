@@ -3,59 +3,81 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>History of previous users</title>
+    <title>History Mindmap</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #001f4d;
+            color: #fff;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        #mynetwork {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
 </head>
 
-<body style="background: linear-gradient(135deg, #ffe0e9, #ffffff);">
-    <!--navbar-->
-    <nav class="navbar">
-        <div class="nav-left">
-            <a href="/">
-                <img src="/static/logo_full.jpg" alt="Logo" class="logo">
-            </a>
-        </div>
+<body style="background: #001f4d; color: #fff;">
 
-        <div class="nav-center">
-            <a href="/">Home</a>
-            <a href="/history">History</a>
-            <a href="/explore-pairing">Pairing</a>
-            <a href="/aboutyou">About you</a>
-            <a href="/peoplelikeyou">People likes you</a>
-        </div>
+    <div id="mynetwork" style="width: 100%; height: 500px;"></div>
 
-        <div class="nav-right">
-            {% if session.get('username') %}
-            <span>Welcome, {{ session['username'] }}!</span>
-            <a href="/logout" class="btn-solid">Logout</a>
-            {% else %}
-            <a href="/login" class="btn-solid">Sign In</a>
-            <a href="/register" class="btn-solid">Register</a>
-            {% endif %}
-        </div>
-    </nav>
+    <script>
+        var nodes = new vis.DataSet([
+            { id: 0, label: "History of users", shape: "circle", color: "#aab" },
+            {% for mbti, count in mbti_counts.items() %}
+        { id: '{{ mbti }}', label: '{{ mbti }}\n({{ count }})', shape: 'box' },
+        {% endfor %}
+        ]);
 
-    <div class="history-table-container">
-        <h1>History Records</h1>
-        <table class="history-table">
-            <thead>
-                <tr>
-                    <th>Username</th>
-                    <th>MBTI Type</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for record in results %}
-                <tr>
-                    <td>{{ record[0] }}</td> <!-- username -->
-                    <td>{{ record[1] }}</td> <!-- mbti_type -->
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+        var edges = [
+            {% for mbti, count in mbti_counts.items() %}
+        { from: 0, to: '{{ mbti }}' },
+        {% endfor %}
+        ];
 
+        var container = document.getElementById('mynetwork');
+        var data = { nodes: nodes, edges: edges };
+
+        var options = {
+            nodes: {
+                font: { color: "#333", size: 18, face: "Arial" }
+            },
+            edges: {
+                color: "#ccc"
+            },
+            interaction: {
+                zoomView: true,
+                zoomSpeed: 0.3
+            },
+            physics: {
+                enabled: true,
+                barnesHut: {
+                    gravitationalConstant: -2000,
+                    centralGravity: 0.3,
+                    springLength: 200
+                }
+            }
+        };
+
+        var network = new vis.Network(container, data, options);
+
+        // 限制缩放范围在 0.5 ~ 1.5 之间
+        network.on("zoom", function () {
+            var scale = network.getScale();
+            if (scale < 0.5) {
+                network.moveTo({ scale: 0.5 });
+            } else if (scale > 1.5) {
+                network.moveTo({ scale: 1.5 });
+            }
+        });
+    </script>
 
 </body>
 
