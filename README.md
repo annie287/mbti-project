@@ -10,9 +10,9 @@ A MBTI matching website, you would know yourself better here
 5. Deployed with Render
 
 ## Tech Stack
-- **Frontend: ** HTML, CSS, JavaScript (vis)
-- **Backend: ** Python flask
-- **Database: ** SQL
+- **Frontend:** HTML, CSS, JavaScript (vis)
+- **Backend:** Python flask
+- **Database:** SQL
 - ** Deployment: ** Render
 
 ## Project Structure
