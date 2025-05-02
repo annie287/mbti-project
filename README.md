@@ -13,7 +13,7 @@ A MBTI matching website, you would know yourself better here
 - **Frontend:** HTML, CSS, JavaScript (vis)
 - **Backend:** Python flask
 - **Database:** SQL
-- ** Deployment: ** Render
+- ** Deployment:** Render
 
 ## Project Structure
 ```bash
