@@ -1,6 +1,6 @@
 # mbti-project
 A MBTI matching website, you would know yourself better here
-#### 🔜Video demo: url
+#### 🔜Video demo: https://youtu.be/Dmhou08vHqc?si=AVPfRN03BqNGCzT2
 #### Description: This is a MBTI matching website, users can find their best matches and worst matches, discover their own type of animal and celebrity type, view the mind map of historical users' types.
 ## Features:
 1. Select your own MBTI type
